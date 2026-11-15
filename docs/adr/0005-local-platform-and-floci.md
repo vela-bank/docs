@@ -4,6 +4,7 @@
 - **Fecha:** 2026-11-09
 - **Decisores:** Geronimo Acevedo
 - **Relacionados:** [Desarrollo local](../operations/local-development.md), [CI/CD](../operations/ci-cd.md)
+- **Superado parcialmente por:** [ADR-0012](0012-local-data-lifecycle.md) — RDS sale del entorno local.
 
 ## Contexto
 
@@ -21,6 +22,10 @@ Usar:
 - **Testcontainers** para tests de integración con Postgres/Redis.
 - **Tilt o Skaffold** para desarrollo iterativo dentro de Kubernetes.
 - **Makefile** como interfaz única (`make dev-up`, `make test`, `make kind-up`).
+
+> **Actualización (2026-11-15):** RDS deja de formar parte del entorno local. PostgreSQL se ejecuta
+> en Compose y Testcontainers, y RDS se valida en AWS sandbox. Floci queda para S3, SQS/SNS,
+> DynamoDB, Secrets Manager y ECR. Ver [ADR-0012](0012-local-data-lifecycle.md).
 
 ## Consecuencias
 

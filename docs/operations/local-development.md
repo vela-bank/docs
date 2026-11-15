@@ -49,7 +49,7 @@ El workspace recomendado:
 | PostgreSQL transfers | 5433 | Base `transfers`. |
 | Redis | 6379 | Cache/sesiones. |
 | Keycloak | 8080 | OIDC/OAuth2. |
-| Floci | 4566 | AWS emulado. |
+| Floci | 4566 | AWS emulado: S3, SQS/SNS, Secrets Manager, ECR. |
 | core-banking-service | 8081 | API core. |
 | transfers-service | 8082 | API transfers. |
 | web | 3000 | Cliente. |
@@ -92,6 +92,10 @@ Recursos locales esperados:
 - repositorio ECR `core-banking-service`, `transfers-service`.
 
 El estado es descartable: `floci stop && floci start` deja la nube local limpia.
+
+Floci **no aporta base de datos**. PostgreSQL se ejecuta en Compose (§4) y en Testcontainers para
+los tests; RDS solo existe en AWS y se valida en el sandbox. Ver
+[ADR-0012](../adr/0012-local-data-lifecycle.md).
 
 ## 7. Keycloak
 
@@ -167,6 +171,7 @@ Namespaces:
 - Sin datos reales.
 - No commitear `.env`.
 - No usar `latest` en imágenes.
+- La base de datos no se emula: PostgreSQL corre en Compose y Testcontainers.
 - No desactivar TLS/verificación para “que funcione”.
 - El entorno local no reemplaza staging para validar IAM, cuotas o carga.
 
@@ -174,3 +179,6 @@ Namespaces:
 
 Floci y kind no reproducen AWS/EKS al 100%. La validación final de IAM, red, RDS, límites y
 comportamiento bajo carga se hace en una cuenta AWS sandbox.
+
+La base local es PostgreSQL en Compose (o Testcontainers en tests), no RDS. La deriva posible entre
+ambos (TLS obligatorio, límites de conexión, parameter groups) se cierra en el sandbox.
