@@ -5,7 +5,8 @@ Este directorio es la fuente de verdad del proyecto. Si una decisión no está a
 ## Estado
 
 **Fase de documentación.** Todavía no hay código ejecutable. Las decisiones fundacionales están
-cerradas en los ADRs 0008–0012; no hay decisiones abiertas que bloqueen el MVP.
+cerradas en los ADRs 0008–0013. Quedan dos decisiones abiertas que no bloquean el MVP (D-21 y D-22,
+de la plataforma local) y se resuelven cuando el primer servicio se despliegue en `kind`.
 
 ## Índice
 
@@ -49,6 +50,7 @@ cerradas en los ADRs 0008–0012; no hay decisiones abiertas que bloqueen el MVP
 - [ADR-0010 — Stack de aplicación](adr/0010-application-stack.md)
 - [ADR-0011 — Plataforma, IaC y operación](adr/0011-platform-and-operations.md)
 - [ADR-0012 — Ciclo de vida de los datos locales](adr/0012-local-data-lifecycle.md)
+- [ADR-0013 — Visibilidad pública del proyecto](adr/0013-public-visibility.md)
 
 ### Operación
 
