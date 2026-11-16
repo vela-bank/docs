@@ -7,7 +7,8 @@ cerrar una decisión se crea o actualiza un ADR y se elimina de esta lista.
 
 No hay decisiones abiertas que bloqueen el MVP. Las decisiones fundacionales se cerraron en los
 ADRs [0008](adr/0008-repo-governance-and-naming.md), [0009](adr/0009-product-currency-and-simulation.md),
-[0010](adr/0010-application-stack.md) y [0011](adr/0011-platform-and-operations.md).
+[0010](adr/0010-application-stack.md), [0011](adr/0011-platform-and-operations.md) y
+[0012](adr/0012-local-data-lifecycle.md).
 
 Las decisiones que aparezcan durante la implementación se agregan acá antes de resolverlas.
 
