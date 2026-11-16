@@ -4,6 +4,7 @@
 - **Fecha:** 2026-11-13
 - **Decisores:** Geronimo Acevedo
 - **Relacionados:** [ADR-0001](0001-polyrepo.md), [Mapa de repositorios](../architecture/repo-map.md), [Gobierno de la organización](../governance/org-setup.md), [Trabajo multi-repo](../governance/multi-repo-workflow.md)
+- **Superado parcialmente por:** [ADR-0013](0013-public-visibility.md) — visibilidad pública del portfolio (D-15).
 
 ## Contexto
 

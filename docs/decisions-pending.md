@@ -51,6 +51,7 @@ credenciales descartables.
 | 2026-11-13 | Java 21 + Spring Boot, React + TypeScript + Vite, PostgreSQL 16, SQS/SNS + outbox, Keycloak | [ADR-0010](adr/0010-application-stack.md) |
 | 2026-11-13 | AWS, Terraform, kind, GHCR/ECR, Argo CD, Prometheus/Grafana/Loki/Tempo | [ADR-0011](adr/0011-platform-and-operations.md) |
 | 2026-11-15 | PostgreSQL 16 en Compose/Testcontainers; RDS fuera del entorno local | [ADR-0012](adr/0012-local-data-lifecycle.md) |
+| 2026-11-16 | Visibilidad pública del portfolio; `infra` privado hasta sanear | [ADR-0013](adr/0013-public-visibility.md) |
 
 > Las decisiones de esta tabla son de arquitectura/proceso y producto. Cualquier cambio requiere un
 > nuevo ADR que superseda al anterior.
