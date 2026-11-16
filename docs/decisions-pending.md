@@ -11,6 +11,21 @@ ADRs [0008](adr/0008-repo-governance-and-naming.md), [0009](adr/0009-product-cur
 
 Las decisiones que aparezcan durante la implementación se agregan acá antes de resolverlas.
 
+### Abiertas durante la implementación
+
+Se resuelven cuando el desarrollo las necesite, no antes. El orden de trabajo es un microservicio
+a la vez: primero uno, después el otro.
+
+| ID | Decisión | Opciones | Recomendación `[PROPUESTO]` | Se decide cuando |
+| --- | --- | --- | --- | --- |
+| D-21 | Red entre pods de kind y Floci, y registry local de imágenes | A: Floci en el host, `FLOCI_HOSTNAME` y GHCR como único registry. B: Floci dentro del clúster (Helm) y ECR de Floci como registry local. | A. Coherente con D-12 (GHCR en local/CI) y evita un segundo registry. | Antes de desplegar el primer servicio en kind (walking skeleton). |
+| D-22 | IAM en Floci: enforcement activo o no | A: desactivado en el loop diario y activo en un perfil dedicado (`FLOCI_SERVICES_IAM_ENFORCEMENT_ENABLED=true`). B: desactivado siempre y IAM solo en el sandbox de AWS. | A. Los tests de autorización de servicio a recurso no prueban nada de AWS con IAM apagado. | Cuando el primer servicio acceda a S3, SQS o Secrets Manager. |
+
+Contexto de ambas: [ADR-0005](adr/0005-local-platform-and-floci.md),
+[ADR-0011](adr/0011-platform-and-operations.md) y [ADR-0012](adr/0012-local-data-lifecycle.md).
+Mientras estén abiertas, el desarrollo local usa Floci en el host, sin enforcement de IAM y con
+credenciales descartables.
+
 ## Cómo cerrar una decisión
 
 1. Elegir una opción concreta.
