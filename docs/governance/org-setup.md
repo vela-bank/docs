@@ -184,7 +184,8 @@ Pasos:
 1. Crear org.
 2. Transferir repo.
 3. Renombrar a `docs`.
-4. Mover `CONTRIBUTING.md` y `SECURITY.md` a `.github`.
+4. Mover `CONTRIBUTING.md` a `.github` y crear allí un `SECURITY.md` nuevo con el canal de reporte.
+   La política de diseño sigue en `docs/operations/security.md`.
 5. Actualizar remotos y enlaces.
 6. Crear los demás repos.
 

@@ -97,7 +97,8 @@ El repo actual (`bank`) se convertirá en `docs`:
 1. Crear la organización.
 2. Transferir el repo.
 3. Renombrarlo a `docs`.
-4. Mover `CONTRIBUTING.md` y `SECURITY.md` al repo `.github`.
+4. Mover `CONTRIBUTING.md` al repo `.github`. El `SECURITY.md` es un archivo nuevo que indica cómo
+   reportar un fallo; la política de diseño sigue en `docs/operations/security.md`.
 5. Dejar en `docs` la arquitectura, ADRs, dominio y runbooks.
 6. Actualizar el remoto local y los enlaces.
 
